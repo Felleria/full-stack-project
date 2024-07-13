@@ -4,9 +4,11 @@ import React, { useState } from 'react';
 
 const SignIn = () => {
     const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSignIn = async () => {
+    const handleSignIn = async (e) => {
+        e.preventDefault();
         // Implement sign-in logic here
         // Example: Fetch API call to authenticate user
 
@@ -16,12 +18,13 @@ const SignIn = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ username, password }),
+                body: JSON.stringify({ username, email, password }),
             });
 
             if (response.ok) {
                 // Redirect to home page after successful sign-in
-                history.push('/');
+                /*history.push('/');*/
+                console.log('Sign-in successful');
             } else {
                 // Handle sign-in error
                 console.error('Sign-in failed');
@@ -40,13 +43,24 @@ const SignIn = () => {
                             <h2 className="card-title mb-4">Sign In</h2>
                             <form onSubmit={handleSignIn}>
                                 <div className="mb-3">
-                                    <label htmlFor="username" className="form-label">Username or Email</label>
+                                    <label htmlFor="username" className="form-label">Username</label>
                                     <input
                                         type="text"
                                         id="username"
                                         className="form-control"
                                         value={username}
                                         onChange={(e) => setUsername(e.target.value)}
+                                        required
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="email" className="form-label">Email</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        className="form-control"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
                                         required
                                     />
                                 </div>

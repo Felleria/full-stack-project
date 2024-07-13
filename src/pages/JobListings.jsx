@@ -1,4 +1,4 @@
-// src/pages/JobListings.jsx
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 /*import './styles.css';*/
