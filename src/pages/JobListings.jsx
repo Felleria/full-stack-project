@@ -1,7 +1,5 @@
-
+// src/components/JobListings.jsx
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-/*import './styles.css';*/
 
 const JobListings = () => {
   const [jobs, setJobs] = useState([]);
@@ -14,15 +12,30 @@ const JobListings = () => {
   }, []);
 
   return (
-    <div className="container">
-      <h1>Job Listings</h1>
-      <ul className="job-list">
-        {jobs.map(job => (
-          <li key={job.id} className="job-item">
-            <Link to={`/jobs/${job.id}`}>{job.title}</Link>
-          </li>
-        ))}
-      </ul>
+    <div className="container mt-5">
+      <h2>Job Listings</h2>
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Company</th>
+            <th>Location</th>
+            <th>Posted At</th>
+          </tr>
+        </thead>
+        <tbody>
+          {jobs.map((job) => (
+            <tr key={job.id}>
+              <td>{job.title}</td>
+              <td>{job.description}</td>
+              <td>{job.company}</td>
+              <td>{job.location}</td>
+              <td>{new Date(job.created_at).toLocaleDateString()}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
