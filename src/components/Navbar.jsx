@@ -19,9 +19,6 @@ const Navbar = () => {
             <Link className="nav-link" to="/jobs/create">Post a Job</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/profile">Profile</Link>
-          </li>
-          <li className="nav-item">
             <Link className="nav-link" to="/profile">Login</Link>
           </li>
         </ul>
