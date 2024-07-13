@@ -1,23 +1,23 @@
-// src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import JobListings from './pages/JobListings';
-import CreateJob from './pages/CreateJob';
-import ApplicantList from './pages/ApplicantList';
-import './App.css';
+import Jobs from './pages/Jobs';
+import CreateJobPage from './pages/CreateJobPage';
+import Applicants from './pages/Applicants';
 
 const App = () => {
   return (
     <Router>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/jobs" element={<JobListings />} />
-        <Route path="/create-job" element={<CreateJob />} />
-        <Route path="/applicants" element={<ApplicantList />} />
-      </Routes>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/jobs" element={<Jobs />} />
+          <Route path="/jobs/create" element={<CreateJobPage />} />
+          <Route path="/applicants" element={<Applicants />} />
+        </Routes>
+      </div>
     </Router>
   );
 };
