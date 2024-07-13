@@ -1,19 +1,28 @@
 // src/components/Navbar.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+/*import './styles.css';*/
 
 const Navbar = () => {
   return (
-    <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/jobs">Job Listings</Link></li>
-        <li><Link to="/jobs/create">Create Job</Link></li>
-        <li><Link to="/my-applications">My Applications</Link></li>
-        <li><Link to="/profile">Profile</Link></li>
-        <li><Link to="/reset-password">Reset Password</Link></li>
-        <li><Link to="/employer-dashboard">Employer Dashboard</Link></li>
-      </ul>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <Link className="navbar-brand" to="/">Job Board</Link>
+      <div className="collapse navbar-collapse">
+        <ul className="navbar-nav ml-auto">
+          <li className="nav-item">
+            <Link className="nav-link" to="/">Home</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/jobs">Job Listings</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/jobs/create">Post a Job</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/profile">Profile</Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };
