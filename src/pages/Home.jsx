@@ -5,7 +5,7 @@ import React from 'react';
 const Home = () => {
   return (
     <div className="container">
-      <h1>Welcome to the Job Board</h1>
+      <h1>Welcome to the JobDeed!</h1>
       <p>Find your dream job or post job listings to find the perfect candidate.</p>
     </div>
   );
