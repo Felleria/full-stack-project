@@ -7,6 +7,7 @@ import JobListings from './pages/JobListings';
 import JobDetails from './pages/JobDetails';
 import CreateJob from './pages/CreateJob';
 import Profile from './pages/Profile';
+import Login from './pages/Login';
 import './styles.css';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/jobs/:id" element={<JobDetails />} />
         <Route path="/jobs/create" element={<CreateJob />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
