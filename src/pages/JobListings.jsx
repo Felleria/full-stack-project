@@ -1,4 +1,4 @@
-// src/components/JobListings.jsx
+
 import React, { useEffect, useState } from 'react';
 
 const JobListings = () => {
@@ -13,29 +13,31 @@ const JobListings = () => {
 
   return (
     <div className="container mt-5">
-      <h2>Job Listings</h2>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Company</th>
-            <th>Location</th>
-            <th>Posted At</th>
-          </tr>
-        </thead>
-        <tbody>
-          {jobs.map((job) => (
-            <tr key={job.id}>
-              <td>{job.title}</td>
-              <td>{job.description}</td>
-              <td>{job.company}</td>
-              <td>{job.location}</td>
-              <td>{new Date(job.created_at).toLocaleDateString()}</td>
+      <h2 className="mb-4">Job Listings</h2>
+      <div className="table-responsive">
+        <table className="table table-hover table-striped">
+          <thead className="thead-dark">
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Company</th>
+              <th>Location</th>
+              <th>Posted At</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {jobs.map((job) => (
+              <tr key={job.id}>
+                <td>{job.title}</td>
+                <td>{job.description}</td>
+                <td>{job.company}</td>
+                <td>{job.location}</td>
+                <td>{new Date(job.created_at).toLocaleDateString()}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
