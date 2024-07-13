@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import JobListings from './pages/JobListings';
 import JobDetails from './pages/JobDetails';
 import CreateJob from './pages/CreateJob';
-import Login from './pages/Login';
+import SignIn from './pages/signIn';
 import './styles.css';
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
         <Route path="/jobs" element={<JobListings />} />
         <Route path="/jobs/:id" element={<JobDetails />} />
         <Route path="/jobs/create" element={<CreateJob />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/signin" element={<SignIn />} />
       </Routes>
     </Router>
   );
