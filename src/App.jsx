@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import JobListings from './pages/JobListings';
 import JobDetails from './pages/JobDetails';
 import CreateJob from './pages/CreateJob';
-import SignIn from './pages/signIn';
+import SignIn from './pages/SignUp';
 import './styles.css';
 
 const App = () => {

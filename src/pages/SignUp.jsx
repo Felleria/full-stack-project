@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 /*import { useHistory } from 'react-router-dom';*/
 
-const SignIn = () => {
+const SignUp = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -13,24 +13,24 @@ const SignIn = () => {
         // Example: Fetch API call to authenticate user
 
         try {
-            const response = await fetch('http://localhost:5555/signin', {
+            const response = await fetch('http://localhost:5555/applicants', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ username, email, password }),
+                body: JSON.stringify({username, email, password, created_at, role }),
             });
 
             if (response.ok) {
                 // Redirect to home page after successful sign-in
                 /*history.push('/');*/
-                console.log('Sign-in successful');
+                console.log('Sign-Up successful');
             } else {
                 // Handle sign-in error
-                console.error('Sign-in failed');
+                console.error('Sign-Up failed');
             }
         } catch (error) {
-            console.error('Error signing in:', error.message);
+            console.error('Error signing Up:', error.message);
         }
     };
 
@@ -40,7 +40,7 @@ const SignIn = () => {
                 <div className="col-md-6">
                     <div className="card">
                         <div className="card-body">
-                            <h2 className="card-title mb-4">Sign In</h2>
+                            <h2 className="card-title mb-4">Sign Up</h2>
                             <form onSubmit={handleSignIn}>
                                 <div className="mb-3">
                                     <label htmlFor="username" className="form-label">Username</label>
@@ -75,7 +75,7 @@ const SignIn = () => {
                                         required
                                     />
                                 </div>
-                                <button type="submit" className="btn btn-primary">Sign In</button>
+                                <button type="submit" className="btn btn-primary">Sign Up</button>
                             </form>
                         </div>
                     </div>
@@ -85,4 +85,4 @@ const SignIn = () => {
     );
 };
 
-export default SignIn;
+export default SignUp;
