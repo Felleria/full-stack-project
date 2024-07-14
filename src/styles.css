@@ -1,0 +1,33 @@
+/* src/styles.css */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    margin-top: 20px;
+  }
+  
+  .job-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .job-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .job-item a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .job-item a:hover {
+    text-decoration: underline;
+  }
+  
