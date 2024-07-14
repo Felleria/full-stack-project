@@ -20,8 +20,8 @@ const App = () => {
         <Route path="/jobs" element={<JobListings />} />
         <Route path="/jobs/:id" element={<JobDetails />} />
         <Route path="/jobs/create" element={<CreateJob />} />
-        <Route path="/applicants" element={Applicants} />
-        <Route path="/applications" element={Applications} />
+        <Route path="/applicants" Component={Applicants} />
+        <Route path="/applications" Component={Applications} />
         <Route path="/signup" element={<SignUp/>} />
       </Routes>
     </Router>
